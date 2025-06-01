@@ -1,4 +1,4 @@
-package SimUDuck;
+package Ch1.SimUDuck;
 
 public class Squeak implements QuackBehavior{
     @Override
