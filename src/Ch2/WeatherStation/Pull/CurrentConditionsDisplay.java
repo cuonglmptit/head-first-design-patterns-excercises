@@ -1,6 +1,6 @@
-package Ch2.WeatherStation;
+package Ch2.WeatherStation.Pull;
 
-public class CurrentConditionsDisplay implements Observer{
+public class CurrentConditionsDisplay implements Observer {
     private float temperature;
     private float humidity;
     private WeatherData weatherData;
@@ -10,9 +10,9 @@ public class CurrentConditionsDisplay implements Observer{
     }
 
     @Override
-    public void update(float temp, float humidity, float pressure) {
-        this.temperature = temp;
-        this.humidity = humidity;
+    public void update() {
+        this.temperature = weatherData.getTemperature();
+        this.humidity = weatherData.getHumidity();
         display();
     }
 

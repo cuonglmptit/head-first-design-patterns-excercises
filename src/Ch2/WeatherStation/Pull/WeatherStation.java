@@ -1,4 +1,4 @@
-package Ch2.WeatherStation;
+package Ch2.WeatherStation.Pull;
 
 public class WeatherStation {
     public static void main(String[] args) {

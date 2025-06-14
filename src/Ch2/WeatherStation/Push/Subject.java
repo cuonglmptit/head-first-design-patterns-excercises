@@ -1,4 +1,4 @@
-package Ch2.WeatherStation;
+package Ch2.WeatherStation.Push;
 
 public interface Subject {
     public void registerObserver(Observer o);

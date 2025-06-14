@@ -1,4 +1,4 @@
-package Ch2.WeatherStation;
+package Ch2.WeatherStation.Push;
 
 import java.util.ArrayList;
 import java.util.List;
