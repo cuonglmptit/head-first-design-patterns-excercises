@@ -1,4 +1,4 @@
-package Ch4.PizzaStore;
+package Ch4.PizzaStoreFactoryMethod;
 
 public class NYStylePepperoniPizza extends Pizza {
     public NYStylePepperoniPizza() {

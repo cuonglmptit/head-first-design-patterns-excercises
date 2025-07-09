@@ -1,4 +1,4 @@
-package Ch4.PizzaStore;
+package Ch4.PizzaStoreFactoryMethod;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,6 @@
-package Ch4.PizzaStore;
+package Ch4.PizzaStoreAbstractFactoryMethod;
+
+import Ch4.PizzaStoreAbstractFactoryMethod.Pizzas.Pizza;
 
 public abstract class PizzaStore {
     public Pizza orderPizza(String type){
