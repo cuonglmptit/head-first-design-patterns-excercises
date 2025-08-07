@@ -22,4 +22,10 @@ public class LightOnCommand implements Command{
         // Bật đèn
         light.on();
     }
+
+    @Override
+    public void undo() {
+        // Tắt đèn
+        light.off();
+    }
 }

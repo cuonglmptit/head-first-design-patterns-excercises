@@ -11,7 +11,13 @@ package Ch6.CommandPattern;
  * @since Wednesday, 06 August 2025
  */
 public class GarageDoor {
-    public GarageDoor() {
+
+    // Vị trí của cửa gara
+    private String location;
+    public GarageDoor(String location) {
+        // Khởi tạo cửa gara
+        this.location = location;
+        System.out.println("Garage Door is created at " + location);
     }
 
     // Mở cửa gara
@@ -38,4 +44,6 @@ public class GarageDoor {
     public void lightOff() {
         System.out.println("Garage Door Light is Off");
     }
+
+
 }

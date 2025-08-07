@@ -11,14 +11,17 @@ package Ch6.CommandPattern;
  * @since Wednesday, 06 August 2025
  */
 public class Light {
-    public Light() {
+    private String location;
+
+    public Light(String location) {
+        this.location = location;
     }
-    //Light is On
+
     public void on() {
-        System.out.println("Light is On");
+        System.out.println(location + " Light is On");
     }
-    //Light is Off
+
     public void off() {
-        System.out.println("Light is Off");
+        System.out.println(location + " Light is Off");
     }
 }

@@ -13,4 +13,7 @@ package Ch6.CommandPattern;
 public interface Command {
     //Hàm execute()
     public void execute();
+
+    //Hàm undo()
+    public void undo();
 }
