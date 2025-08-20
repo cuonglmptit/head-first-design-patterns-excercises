@@ -11,31 +11,39 @@ package Ch6.CommandPattern;
  * @since Thursday, 07 August 2025
  */
 public class CeilingFan {
+    public static final int HIGH = 3;
+    public static final int MEDIUM = 2;
+    public static final int LOW = 1;
+    public static final int OFF = 0;
     private String location;
     private int speed;
 
     public CeilingFan(String location) {
         this.location = location;
-        this.speed = 0; // Mặc định tốc độ là 0 (tắt)
+        this.speed = OFF; // Mặc định tốc độ là 0 (tắt)
     }
 
     public void high() {
-        speed = 3; // Tốc độ cao
+        // Tốc độ cao
+        speed = HIGH;
         System.out.println(location + " ceiling fan is on high");
     }
 
     public void medium() {
-        speed = 2; // Tốc độ trung bình
+        // Tốc độ trung bình
+        speed = MEDIUM;
         System.out.println(location + " ceiling fan is on medium");
     }
 
     public void low() {
-        speed = 1; // Tốc độ thấp
+        // Tốc độ thấp
+        speed = LOW;
         System.out.println(location + " ceiling fan is on low");
     }
 
     public void off() {
-        speed = 0; // Tắt quạt
+        // Tắt quạt
+        speed = OFF;
         System.out.println(location + " ceiling fan is off");
     }
 

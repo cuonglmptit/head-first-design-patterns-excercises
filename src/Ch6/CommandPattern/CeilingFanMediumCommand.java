@@ -1,30 +1,29 @@
 package Ch6.CommandPattern;
 
 /**
- * CeilingFanOffCommand – Mô_tả_ngắn_về_lớp.
+ * CeilingFanMediumCommand – Mô_tả_ngắn_về_lớp.
  *
  * <p>
  * Mô_tả_chi_tiết.
  * </p>
  *
  * @author cuonglmptit
- * @since Thursday, 07 August 2025
+ * @since Wednesday, 20 August 2025
  */
-public class CeilingFanOffCommand implements Command {
+public class CeilingFanMediumCommand implements Command{
     private CeilingFan ceilingFan;
     private int prevSpeed;
 
-    public CeilingFanOffCommand(CeilingFan ceilingFan) {
+    public CeilingFanMediumCommand(CeilingFan ceilingFan) {
         this.ceilingFan = ceilingFan;
-        this.prevSpeed = ceilingFan.getSpeed(); // Lưu tốc độ hiện tại
     }
 
     @Override
     public void execute() {
-        // Lưu tốc độ hiện tại trước khi tắt quạt
+        // Lưu tốc độ trước đó
         prevSpeed = ceilingFan.getSpeed();
-        // Tắt quạt trần
-        ceilingFan.off();
+        // Đặt tốc độ quạt ở mức trung bình
+        ceilingFan.medium();
     }
 
     @Override
@@ -36,8 +35,8 @@ public class CeilingFanOffCommand implements Command {
             ceilingFan.medium();
         } else if (prevSpeed == CeilingFan.LOW) {
             ceilingFan.low();
-        } else {
-            ceilingFan.off(); // Nếu tốc độ trước đó là OFF, không làm gì cả
+        } else if (prevSpeed == CeilingFan.OFF) {
+            ceilingFan.off();
         }
     }
 }

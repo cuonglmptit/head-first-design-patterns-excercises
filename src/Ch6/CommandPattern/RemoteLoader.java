@@ -42,8 +42,15 @@ public class RemoteLoader {
 
         System.out.println("Remote Control\n");
 
-        remoteControl.onButtonWasPushed(0); // Bật đèn phòng khách
-        remoteControl.offButtonWasPushed(0); // Tắt đèn phòng khách
+        remoteControl.onButtonWasPushed(0);
+        remoteControl.offButtonWasPushed(0);
+        System.out.println(remoteControl);
+        remoteControl.undoButtonWasPushed();
+        remoteControl.offButtonWasPushed(0);
+        remoteControl.onButtonWasPushed(0);
+        System.out.println(remoteControl);
+        remoteControl.undoButtonWasPushed();
+
         remoteControl.onButtonWasPushed(1); // Bật đèn bếp
         remoteControl.offButtonWasPushed(1); // Tắt đèn bếp
         remoteControl.onButtonWasPushed(2); // Bật quạt trần
@@ -52,5 +59,6 @@ public class RemoteLoader {
         remoteControl.offButtonWasPushed(3); // Đóng cửa gara
         remoteControl.onButtonWasPushed(4); // Bật Stereo với CD
         remoteControl.offButtonWasPushed(4); // Tắt Stereo
+
     }
 }

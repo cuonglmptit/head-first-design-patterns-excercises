@@ -13,6 +13,7 @@ package Ch6.CommandPattern;
 public class RemoteControl {
     Command[] onCommands;
     Command[] offCommands;
+    Command undoCommand;
 
     RemoteControl(){
         onCommands = new Command[7];
@@ -23,6 +24,7 @@ public class RemoteControl {
             onCommands[i] = noCommand;
             offCommands[i] = noCommand;
         }
+        undoCommand = noCommand;
     }
 
     // Hàm setCommand
@@ -34,20 +36,26 @@ public class RemoteControl {
     // Hàm onButtonWasPushed
     public void onButtonWasPushed(int slot) {
         onCommands[slot].execute();
+        undoCommand = onCommands[slot];
     }
     // Hàm offButtonWasPushed
     public void offButtonWasPushed(int slot) {
         offCommands[slot].execute();
+        undoCommand = offCommands[slot];
     }
 
+    // Hàm undoButtonWasPushed
+    public void undoButtonWasPushed() {
+        undoCommand.undo();
+    }
     @Override
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("\n------ Remote Control ------\n");
         for (int i = 0; i < onCommands.length; i++) {
-            stringBuilder.append("[slot " + i + "] " + onCommands[i].getClass().getName() + "    " +
-                    offCommands[i].getClass().getName() + "\n");
+            stringBuilder.append("[slot " + i + "] " + onCommands[i].getClass().getName() + "    " + offCommands[i].getClass().getName() + "\n");
         }
+        stringBuilder.append("[undo] " + undoCommand.getClass().getName() + "\n");
         return stringBuilder.toString();
     }
 }
